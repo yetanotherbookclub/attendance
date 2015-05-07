@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="row text-center">
+<h1>Bay Area Billing and Payment Engineers</h1>
+</div>
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <h2>Find and Click on Your Name</h2>
+    <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-6 users-list">
+    <ul>
+        <% @users.each do |user| %>
+          <li> <%= link_to user.name, edit_user_path(user) %></li>
+        <% end %>
+    </ul>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-sm-offset-2">
+    <h3>Not on List <%= link_to 'Add Name', new_user_path %></h3>
+  </div>
+</div>
+
+</div>
